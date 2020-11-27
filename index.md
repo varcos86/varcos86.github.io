@@ -1,8 +1,13 @@
-# node.js and npm
+# node.js, npm and express
 
-First of all, we should install node. To easy the process, I'm going to use docker to avoid installing everything on my local computer, by following both [NodeJS](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/) and [Docker](https://docs.docker.com/get-started/nodejs/build-images/) guides.
+First of all, we should install node. To easy the process, I'm going to use docker to avoid installing everything on my local computer, by following the [NodeJS](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/) guide.
 
-Here is the Dockerfile I'm going to use to play with node:
+I'm going to create a simple Express application to test the deployment in the first place. The application is the following:
+
+```
+```
+
+Here is the Dockerfile I'm going to use:
 
 ```
 FROM node:12.18.1
@@ -20,3 +25,11 @@ CMD [ "node", "server.js" ]
 
 ```
 
+Now, I am able to build the Docker image and start the Docker container by doing:
+```
+
+```
+
+To test that this actually works, lets use curl:
+```
+```
