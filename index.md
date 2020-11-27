@@ -1,19 +1,23 @@
+# node.js and npm
 
----
-layout: default
----
+First of all, we should install node. To easy the process, I'm going to use docker to avoid installing everything on my local computer.
+Here is the Dockerfile I'm going to use to play with node:
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
+```
+FROM node:12.18.1
+ENV NODE_ENV=production
 
-[Link to another page](./another-page.html).
+WORKDIR /app
 
-There should be whitespace between paragraphs.
+COPY ["package.json", "package-lock.json*", "./"]
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+RUN npm install
 
-# Header 1
+COPY . .
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+CMD [ "node", "server.js" ]
+
+```
 
 ## Header 2
 
